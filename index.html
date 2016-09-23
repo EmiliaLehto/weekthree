@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> World Population Growth </title>
+   
+
+<link href="style.css" rel="stylesheet">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"> </script>
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+
+<body class="class-for-index"> 
+
+<a href="index2.html">HISTORY</a>
+<a href="index3.html">/ FACTS</a>
+
+
+<h1> Current World Population </h1>
+
+
+<p class="page-content"> </p>
+
+
+
+<script>
+
+var count = 7453700750;
+
+(function() {
+
+  count ++;
+  $(".page-content").html(count);
+
+  setTimeout(arguments.callee, 240);
+
+})();
+
+(function(){
+  count--; //increase by 1
+  $(".page-content").html(count)
+  setTimeout(arguments.callee, 570);
+  })();
+
+
+
+
+</script>
+
+</body>
+</html>

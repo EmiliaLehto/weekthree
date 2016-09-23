@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title> History </title>
+
+<link  href="style.css" rel="stylesheet">
+
+<script src="https://www.amcharts.com/lib/3/ammap.js"> </script>
+<script src="https://www.amcharts.com/lib/3/maps/js/worldLow.js"> </script>
+<script src="https://www.amcharts.com/lib/3/themes/light.js"> </script>
+<script src="https://www.amcharts.com/lib/3/themes/light.js"> </script>
+<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"> </script>
+
+
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"> </script>
+<div id="chartdiv"></div>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+</head>
+<body class= "class-for-index2"> 
+
+<a href="index.html">CURRENT WORLD POPULATION</a>
+<a href="index3.html">/ FACTS</a>
+
+
+<h1> World population growth since 1500 </h1>
+
+
+<p class="page-content"> </p>
+<p class="page-africa"> </p>
+<p class="page-russia"> </p>
+<p class="page-brazil"> </p>
+<p class="page-northamerica"> </p>
+<p class="page-australia"> </p>
+<p class="page-europe"> </p>
+<p class="page-asia"> </p>
+<p class="#container"> </p>
+
+<script> 
+var map = AmCharts.makeChart( "chartdiv", {
+
+  "type": "map",
+  "theme": "light",
+  "projection": "miller",
+
+  "dataProvider": {
+    "map": "worldLow",
+    "getAreasFromMap": true
+  },
+  "areasSettings": {
+    "autoZoom": true,
+    "selectedColor": "#CC0000"
+  
+  }
+} );
+</script>
+<script>
+
+
+function speed(currentcount, endcount) {
+  return Math.round((currentcount/endcount*100) * 5)
+}
+
+
+//AFRICA
+var countafrica = 46750000;
+var africaendcount = 1216000000;
+
+(function() {
+  countafrica += 1;
+  $(".page-africa").html("Africa population " + (Math.round(countafrica)));
+  console.log(countafrica);
+  setTimeout(arguments.callee, speed(countafrica, africaendcount));
+
+
+})();
+
+
+//RUSSIA
+var countrussia = 6000000;
+var russiaendcount = 143435936;
+
+(function() {
+
+  countrussia += 10;
+  $(".page-russia").html("Russia population " + (Math.round(countrussia)));
+  console.log(countrussia);
+  setTimeout(arguments.callee, speed(countrussia, russiaendcount));
+
+})();
+
+
+//BRAZIL
+var countbrazil = 10000000;
+var brazilendcount = 209962538;
+
+(function() {
+
+  countbrazil += 10;
+  $(".page-brazil").html("Brazil population " + (Math.round(countbrazil)));
+  console.log(countbrazil);
+  setTimeout(arguments.callee, speed(countbrazil, brazilendcount));
+
+})();
+
+//NORTHAMERICA
+var countnorthamerica = 2250000;
+var northamericaendcount = 361021880;
+
+
+(function() {
+
+  countnorthamerica += 10;
+  $(".page-northamerica").html("Northamerica population " + (Math.round(countnorthamerica)));
+  console.log(countnorthamerica);
+  setTimeout(arguments.callee, speed(countnorthamerica, northamericaendcount));
+
+})();
+
+//AUSTRALIA
+var countaustralia = 450000;
+var australiaendcount = 24309330;
+
+(function() {
+
+  countaustralia += 10;
+  $(".page-australia").html("Australia population " + (Math.round(countaustralia)));
+  console.log(countaustralia);
+  setTimeout(arguments.callee, speed(countaustralia, australiaendcount));
+
+})();
+
+//EUROPE
+var counteurope = 60000000;
+var europeendcount = 738941898;
+
+(function() {
+
+  counteurope += 10;
+  $(".page-europe").html("Europe population " + (Math.round(counteurope)));
+  console.log(counteurope);
+  setTimeout(arguments.callee, speed(counteurope, europeendcount));
+
+})();
+
+//CHINA
+var countasia = 103000000;
+var asiaendcount = 1383758728;
+
+(function() {
+
+  countasia += 10;
+  $(".page-asia").html("China population " + (Math.round(countasia)));
+  console.log(countasia);
+  setTimeout(arguments.callee, speed(countasia, asiaendcount));
+
+})();
+
+</script>
+
+<h1> Top 10 Countries </h1>
+
+<p class="toplist">
+
+<ol> 
+<h2> 1500 </h2>
+<li> China </li>
+<li> India </li>
+<li> Japan </li>
+<li> France </li>
+<li> Germany </li>
+<li> Bangladesh </li>
+<li> Russia </li>
+<li> Indonesia </li>
+<li> Italy </li>
+<li> Pakistan </li>
+</ol>
+
+<ol>
+<h2> 2016 </h2>
+<li> China </li>
+<li> India </li>
+<li> U.S.A. </li>
+<li> Indonesia </li>
+<li> Brazil </li>
+<li> Pakistan </li>
+<li> Nigeria </li>
+<li> Bangladesh </li>
+<li> Russia </li>
+<li> Mexico </li>
+</ol>
+
+</p>
+
+<script type="text/javascript">
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'area'
+        },
+        title: {
+            text: 'Historic and Estimated Worldwide Population Growth'
+        },
+        
+    
+        xAxis: {
+            categories: ['1500', '1600', '1700', '1800', '1900', '2000', '2016'],
+            tickmarkPlacement: 'on',
+            title: {
+                enabled: false
+            }
+        },
+        yAxis: {
+            title: {
+                text: 'Millions'
+            },
+            labels: {
+                formatter: function () {
+                    return this.value / 10;
+                }
+            }
+        },
+        tooltip: {
+            shared: true,
+            valueSuffix: ' millions'
+        },
+        plotOptions: {
+            area: {
+                stacking: 'normal',
+                lineColor: '#666666',
+                lineWidth: 1,
+                marker: {
+                    lineWidth: 1,
+                    lineColor: '#666666'
+                }
+            }
+        },
+        series: [{
+            name: 'China',
+            data: [103, 160, 138, 330, 400, 1262, 1380]
+        }, {
+            name: 'Brazil',
+            data: [1, 1, 1.2, 2.5, 18, 176, 209]
+        }, {
+            name: 'Australia',
+            data: [0.5, 0.5, 0.5, 0.2, 3.7, 19, 24]
+        }, {
+            name: 'Russia',
+            data: [6, 13, 13, 37, 133, 146, 143]
+        }, {
+            name: 'Europe',
+            data: [60, 78, 155, 203, 408, 726, 739]
+        }]
+    });
+});
+
+</script>
+<div id="container" style="min-width: 310px; height: 700px; margin: 0 auto"></div>
+   
+</div>
+</body>
+</html>
